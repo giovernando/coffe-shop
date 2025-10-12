@@ -17,7 +17,7 @@
 - [x] Create src/components/ folder for reusable components (Header.vue, Footer.vue, etc.)
 
 ## 4. Implement Core Features
-- [ ] Menu (Dynamic & Interactive): Filterable categories, hover animations, add-to-cart
+- [x] Menu (Dynamic & Interactive): Filterable categories, hover animations, add-to-cart
 - [ ] Customization: Modal for drink customization with preview
 - [ ] Ordering/Takeaway: Cart system with checkout form
 - [ ] Reservations: Booking form with date/time picker
