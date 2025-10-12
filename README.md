@@ -5,34 +5,34 @@ This is a Vue 3 coffee shop website built with Vite.
 ## Screenshots
 
 ### Home Page
-<img src="https://drive.google.com/uc?export=view&id=15kN1CjkvQSfkbtoCnjmmJ-U-GVR7sNNV" alt="Home Page" width="600">
+<img src="public/images/home.png" alt="Home Page" width="600">
 
 ### Menu Page
-<img src="https://drive.google.com/uc?export=view&id=1Vxj_Da28NPw36ZbvulPJNnhhoV7KjRIS" alt="Menu Page" width="600">
+<img src="public/images/menu.png" alt="Menu Page" width="600">
 
 ### Ordering Page
-<img src="https://drive.google.com/uc?export=view&id=1pKbd0qJJlam1G1C2tCCv0jN_ki2eAV7B" alt="Ordering Page" width="600">
+<img src="public/images/cart.png" alt="Ordering Page" width="600">
 
 ### Gallery Page
-<img src="https://drive.google.com/uc?export=view&id=1gKg2ElIJYMSwXfrlqVYda-qE9WphPawJ" alt="Gallery Page" width="600">
+<img src="public/images/galery.png" alt="Gallery Page" width="600">
 
 ### Feedback Page
-<img src="https://drive.google.com/uc?export=view&id=1_v9LXHxxL4Tb-Orfp-V0toGLk48gPsjH" alt="Feedback Page" width="600">
+<img src="public/images/feedback.png" alt="Feedback Page" width="600">
 
 ### Blog Page
-<img src="https://drive.google.com/uc?export=view&id=1zKssG0CLT-WVnUK1HxKUQJPcA0H8_0Hf" alt="Blog Page" width="600">
+<img src="public/images/blog.png" alt="Blog Page" width="600">
 
 ### About Page
-<img src="https://drive.google.com/uc?export=view&id=1suIVBnt3eAz-O6N9FJgmOH1VF_1oSzqf" alt="About Page" width="600">
+<img src="public/images/about.png" alt="About Page" width="600">
 
 ### Reservations Page
-<img src="https://drive.google.com/uc?export=view&id=1tlFs3nnmZ3hwCqDxGQYFLUmmxFH09d4Z" alt="Reservations Page" width="600">
+<img src="public/images/reservasi.png" alt="Reservations Page" width="600">
 
 ### Register Page
-<img src="https://drive.google.com/uc?export=view&id=1mpC3mVvOkpp5845VDc_IJzTMSzYb0Vdd" alt="Register Page" width="600">
+<img src="public/images/register.png" alt="Register Page" width="600">
 
 ### Login Page
-<img src="https://drive.google.com/uc?export=view&id=1q54rxhg_Az7zulJ_7G9uwDGFlbL64GJy" alt="Login Page" width="600">
+<img src="public/images/login.png" alt="Login Page" width="600">
 
 This template should help get you started developing with Vue 3 in Vite.
 
