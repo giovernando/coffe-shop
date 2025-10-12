@@ -5,34 +5,34 @@ This is a Vue 3 coffee shop website built with Vite.
 ## Screenshots
 
 ### Home Page
-![Home Page](https://drive.google.com/uc?export=view&id=15kN1CjkvQSfkbtoCnjmmJ-U-GVR7sNNV)
+<img src="https://drive.google.com/uc?export=view&id=15kN1CjkvQSfkbtoCnjmmJ-U-GVR7sNNV" alt="Home Page" width="600">
 
 ### Menu Page
-![Menu Page](https://drive.google.com/uc?export=view&id=1Vxj_Da28NPw36ZbvulPJNnhhoV7KjRIS)
+<img src="https://drive.google.com/uc?export=view&id=1Vxj_Da28NPw36ZbvulPJNnhhoV7KjRIS" alt="Menu Page" width="600">
 
 ### Ordering Page
-![Ordering Page](https://drive.google.com/uc?export=view&id=1pKbd0qJJlam1G1C2tCCv0jN_ki2eAV7B)
+<img src="https://drive.google.com/uc?export=view&id=1pKbd0qJJlam1G1C2tCCv0jN_ki2eAV7B" alt="Ordering Page" width="600">
 
 ### Gallery Page
-![Gallery Page](https://drive.google.com/uc?export=view&id=1gKg2ElIJYMSwXfrlqVYda-qE9WphPawJ)
+<img src="https://drive.google.com/uc?export=view&id=1gKg2ElIJYMSwXfrlqVYda-qE9WphPawJ" alt="Gallery Page" width="600">
 
 ### Feedback Page
-![Feedback Page](https://drive.google.com/uc?export=view&id=1_v9LXHxxL4Tb-Orfp-V0toGLk48gPsjH)
+<img src="https://drive.google.com/uc?export=view&id=1_v9LXHxxL4Tb-Orfp-V0toGLk48gPsjH" alt="Feedback Page" width="600">
 
 ### Blog Page
-![Blog Page](https://drive.google.com/uc?export=view&id=1zKssG0CLT-WVnUK1HxKUQJPcA0H8_0Hf)
+<img src="https://drive.google.com/uc?export=view&id=1zKssG0CLT-WVnUK1HxKUQJPcA0H8_0Hf" alt="Blog Page" width="600">
 
 ### About Page
-![About Page](https://drive.google.com/uc?export=view&id=1suIVBnt3eAz-O6N9FJgmOH1VF_1oSzqf)
+<img src="https://drive.google.com/uc?export=view&id=1suIVBnt3eAz-O6N9FJgmOH1VF_1oSzqf" alt="About Page" width="600">
 
 ### Reservations Page
-![Reservations Page](https://drive.google.com/uc?export=view&id=1tlFs3nnmZ3hwCqDxGQYFLUmmxFH09d4Z)
+<img src="https://drive.google.com/uc?export=view&id=1tlFs3nnmZ3hwCqDxGQYFLUmmxFH09d4Z" alt="Reservations Page" width="600">
 
 ### Register Page
-![Register Page](https://drive.google.com/uc?export=view&id=1mpC3mVvOkpp5845VDc_IJzTMSzYb0Vdd)
+<img src="https://drive.google.com/uc?export=view&id=1mpC3mVvOkpp5845VDc_IJzTMSzYb0Vdd" alt="Register Page" width="600">
 
 ### Login Page
-![Login Page](https://drive.google.com/uc?export=view&id=1q54rxhg_Az7zulJ_7G9uwDGFlbL64GJy)
+<img src="https://drive.google.com/uc?export=view&id=1q54rxhg_Az7zulJ_7G9uwDGFlbL64GJy" alt="Login Page" width="600">
 
 This template should help get you started developing with Vue 3 in Vite.
 
