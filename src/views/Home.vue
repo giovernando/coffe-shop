@@ -36,6 +36,11 @@
     </div>
   </section>
 
+  <section class="preview">
+    <h2>Website Preview</h2>
+    <img src="/images/screenshot-home.png" alt="Home page screenshot" class="preview-image" />
+  </section>
+
   <section class="cta">
     <h2>Ready to Visit?</h2>
     <p>Make a reservation or order online for pickup.</p>
@@ -159,6 +164,23 @@
 .cta h2 {
   margin-bottom: 1rem;
   color: #F5F5DC;
+}
+
+.preview {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: #F5F5DC;
+}
+
+.preview h2 {
+  margin-bottom: 2rem;
+}
+
+.preview-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cta-buttons {

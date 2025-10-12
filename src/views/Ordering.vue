@@ -1,5 +1,9 @@
 <template>
   <div class="ordering-page">
+    <section class="ordering-preview">
+      <h2>Ordering Preview</h2>
+      <img src="/images/screenshot-ordering.png" alt="Ordering page screenshot" class="preview-image" />
+    </section>
     <div class="order-tabs">
       <button @click="activeTab = 'cart'" :class="{ active: activeTab === 'cart' }">Current Order</button>
       <button @click="activeTab = 'history'" :class="{ active: activeTab === 'history' }">Order History</button>
@@ -123,6 +127,24 @@ const placeOrder = () => {
 .ordering-page {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.ordering-preview {
+  padding: 2rem 0;
+  text-align: center;
+  background-color: #F5F5DC;
+  margin-bottom: 2rem;
+}
+
+.ordering-preview h2 {
+  margin-bottom: 1rem;
+}
+
+.preview-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .empty-cart {
