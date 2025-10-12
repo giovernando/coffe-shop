@@ -57,7 +57,7 @@
   background-color: #8B4513;
   color: #F5F5DC;
   padding: 4rem 2rem;
-  min-height: 60vh;
+  min-height: 50vh;
 }
 
 .hero-content {
