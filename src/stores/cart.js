@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 
 export const useCartStore = defineStore('cart', () => {
   const items = ref([])
+  const orderHistory = ref([])
 
   const total = computed(() => {
     return items.value.reduce((sum, item) => sum + (item.price * item.quantity), 0)
@@ -33,12 +34,27 @@ export const useCartStore = defineStore('cart', () => {
     items.value = []
   }
 
+  const placeOrder = (orderDetails) => {
+    const order = {
+      id: Date.now(),
+      date: new Date().toISOString(),
+      items: [...items.value],
+      total: total.value,
+      ...orderDetails
+    }
+    orderHistory.value.push(order)
+    clearCart()
+    return order
+  }
+
   return {
     items,
+    orderHistory,
     total,
     addItem,
     removeItem,
     updateQuantity,
-    clearCart
+    clearCart,
+    placeOrder
   }
 })

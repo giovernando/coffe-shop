@@ -1,61 +1,90 @@
 <template>
   <div class="ordering-page">
-    <h1>Your Order</h1>
-    <div v-if="cartStore.items.length === 0" class="empty-cart">
-      <p>Your cart is empty. <router-link to="/menu">Browse our menu</router-link> to add items.</p>
+    <div class="order-tabs">
+      <button @click="activeTab = 'cart'" :class="{ active: activeTab === 'cart' }">Current Order</button>
+      <button @click="activeTab = 'history'" :class="{ active: activeTab === 'history' }">Order History</button>
     </div>
-    <div v-else class="order-content">
-      <div class="cart-items">
-        <div
-          v-for="(item, index) in cartStore.items"
-          :key="index"
-          class="cart-item"
-        >
-          <img :src="item.image" :alt="item.name" />
-          <div class="item-details">
-            <h3>{{ item.name }}</h3>
-            <p>${{ item.price.toFixed(2) }}</p>
-            <div class="quantity-controls">
-              <button @click="cartStore.updateQuantity(index, item.quantity - 1)">-</button>
-              <span>{{ item.quantity }}</span>
-              <button @click="cartStore.updateQuantity(index, item.quantity + 1)">+</button>
+    <div v-if="activeTab === 'cart'">
+      <h1>Your Order</h1>
+      <div v-if="cartStore.items.length === 0" class="empty-cart">
+        <p>Your cart is empty. <router-link to="/menu">Browse our menu</router-link> to add items.</p>
+      </div>
+      <div v-else class="order-content">
+        <div class="cart-items">
+          <div
+            v-for="(item, index) in cartStore.items"
+            :key="index"
+            class="cart-item"
+          >
+            <img :src="item.image" :alt="item.name" />
+            <div class="item-details">
+              <h3>{{ item.name }}</h3>
+              <p>${{ item.price.toFixed(2) }}</p>
+              <div class="quantity-controls">
+                <button @click="cartStore.updateQuantity(index, item.quantity - 1)">-</button>
+                <span>{{ item.quantity }}</span>
+                <button @click="cartStore.updateQuantity(index, item.quantity + 1)">+</button>
+              </div>
             </div>
+            <button @click="cartStore.removeItem(index)" class="remove-btn">Remove</button>
           </div>
-          <button @click="cartStore.removeItem(index)" class="remove-btn">Remove</button>
+        </div>
+        <div class="order-summary">
+          <h2>Order Summary</h2>
+          <p>Subtotal: ${{ cartStore.total.toFixed(2) }}</p>
+          <p>Tax: ${{ (cartStore.total * 0.08).toFixed(2) }}</p>
+          <p class="total">Total: ${{ (cartStore.total * 1.08).toFixed(2) }}</p>
+          <form @submit.prevent="placeOrder" class="order-form">
+            <h3>Delivery Information</h3>
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input v-model="orderForm.name" type="text" id="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input v-model="orderForm.email" type="email" id="email" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone:</label>
+              <input v-model="orderForm.phone" type="tel" id="phone" required />
+            </div>
+            <div class="form-group">
+              <label for="address">Address:</label>
+              <textarea v-model="orderForm.address" id="address" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="orderType">Order Type:</label>
+              <select v-model="orderForm.orderType" id="orderType">
+                <option value="pickup">Pickup</option>
+                <option value="delivery">Delivery</option>
+              </select>
+            </div>
+            <button type="submit" class="btn place-order-btn">Place Order</button>
+          </form>
         </div>
       </div>
-      <div class="order-summary">
-        <h2>Order Summary</h2>
-        <p>Subtotal: ${{ cartStore.total.toFixed(2) }}</p>
-        <p>Tax: ${{ (cartStore.total * 0.08).toFixed(2) }}</p>
-        <p class="total">Total: ${{ (cartStore.total * 1.08).toFixed(2) }}</p>
-        <form @submit.prevent="placeOrder" class="order-form">
-          <h3>Delivery Information</h3>
-          <div class="form-group">
-            <label for="name">Name:</label>
-            <input v-model="orderForm.name" type="text" id="name" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email:</label>
-            <input v-model="orderForm.email" type="email" id="email" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone:</label>
-            <input v-model="orderForm.phone" type="tel" id="phone" required />
-          </div>
-          <div class="form-group">
-            <label for="address">Address:</label>
-            <textarea v-model="orderForm.address" id="address" required></textarea>
-          </div>
-          <div class="form-group">
-            <label for="orderType">Order Type:</label>
-            <select v-model="orderForm.orderType" id="orderType">
-              <option value="pickup">Pickup</option>
-              <option value="delivery">Delivery</option>
-            </select>
-          </div>
-          <button type="submit" class="btn place-order-btn">Place Order</button>
-        </form>
+    </div>
+    <div v-else-if="activeTab === 'history'">
+      <h1>Order History</h1>
+      <div v-if="cartStore.orderHistory.length === 0" class="empty-history">
+        <p>You haven't placed any orders yet.</p>
+      </div>
+      <div v-else class="order-history">
+        <div
+          v-for="order in cartStore.orderHistory"
+          :key="order.id"
+          class="order-card"
+        >
+          <h3>Order #{{ order.id }}</h3>
+          <p><strong>Date:</strong> {{ new Date(order.date).toLocaleDateString() }}</p>
+          <p><strong>Total:</strong> ${{ order.total.toFixed(2) }}</p>
+          <p><strong>Items:</strong></p>
+          <ul>
+            <li v-for="item in order.items" :key="item.id">
+              {{ item.quantity }}x {{ item.name }} - ${{ (item.price * item.quantity).toFixed(2) }}
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -66,6 +95,7 @@ import { ref } from 'vue'
 import { useCartStore } from '../stores/cart.js'
 
 const cartStore = useCartStore()
+const activeTab = ref('cart')
 
 const orderForm = ref({
   name: '',
@@ -76,9 +106,9 @@ const orderForm = ref({
 })
 
 const placeOrder = () => {
-  // Simulate order placement
-  alert('Order placed successfully! You will receive a confirmation email shortly.')
-  cartStore.clearCart()
+  // Place order and add to history
+  const order = cartStore.placeOrder(orderForm.value)
+  alert(`Order placed successfully! Order ID: ${order.id}. You will receive a confirmation email shortly.`)
   orderForm.value = {
     name: '',
     email: '',
@@ -208,6 +238,61 @@ const placeOrder = () => {
 .place-order-btn {
   width: 100%;
   margin-top: 1rem;
+}
+
+.order-tabs {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.order-tabs button {
+  flex: 1;
+  padding: 0.75rem;
+  background-color: #F5F5DC;
+  border: 2px solid #8B4513;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.order-tabs button.active {
+  background-color: #8B4513;
+  color: #F5F5DC;
+}
+
+.empty-history {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.order-history {
+  display: grid;
+  gap: 2rem;
+}
+
+.order-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-card h3 {
+  margin-bottom: 1rem;
+  color: #8B4513;
+}
+
+.order-card ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-card li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.order-card li:last-child {
+  border-bottom: none;
 }
 
 @media (max-width: 768px) {
