@@ -17,11 +17,21 @@
       <router-link to="/feedback" class="nav-link">Feedback</router-link>
       <router-link to="/about" class="nav-link">About</router-link>
     </nav>
-    <div class="cart-icon">
-      <router-link to="/ordering">
-        <i class="fas fa-shopping-cart"></i>
-        <span v-if="cartCount > 0" class="cart-count">{{ cartCount }}</span>
-      </router-link>
+    <div class="auth-section">
+      <div v-if="!isAuthenticated" class="auth-links">
+        <router-link to="/login" class="nav-link">Login</router-link>
+        <router-link to="/register" class="nav-link">Register</router-link>
+      </div>
+      <div v-else class="user-section">
+        <span class="welcome-text">Welcome, {{ user.name }}</span>
+        <button @click="logout" class="logout-btn">Logout</button>
+      </div>
+      <div class="cart-icon">
+        <router-link to="/ordering">
+          <i class="fas fa-shopping-cart"></i>
+          <span v-if="cartCount > 0" class="cart-count">{{ cartCount }}</span>
+        </router-link>
+      </div>
     </div>
   </header>
 </template>
@@ -29,9 +39,18 @@
 <script setup>
 import { computed } from 'vue'
 import { useCartStore } from '../stores/cart.js'
+import { useAuthStore } from '../stores/auth.js'
 
 const cartStore = useCartStore()
+const authStore = useAuthStore()
+
 const cartCount = computed(() => cartStore.items.length)
+const isAuthenticated = computed(() => authStore.isAuthenticated)
+const user = computed(() => authStore.user)
+
+const logout = () => {
+  authStore.logout()
+}
 </script>
 
 <style scoped>
@@ -97,6 +116,42 @@ const cartCount = computed(() => cartStore.items.length)
   font-size: 0.8rem;
 }
 
+.auth-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.auth-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.welcome-text {
+  color: #F5F5DC;
+  font-weight: bold;
+}
+
+.logout-btn {
+  background-color: #DC143C;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #B22222;
+}
+
 @media (max-width: 768px) {
   .nav {
     display: none;
@@ -104,6 +159,9 @@ const cartCount = computed(() => cartStore.items.length)
   .header {
     flex-direction: column;
     padding: 1rem;
+  }
+  .auth-section {
+    margin-top: 1rem;
   }
 }
 </style>
