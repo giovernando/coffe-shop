@@ -1,5 +1,39 @@
 # coffe-shop
 
+This is a Vue 3 coffee shop website built with Vite.
+
+## Screenshots
+
+### Home Page
+![Home Page](https://drive.google.com/uc?export=view&id=15kN1CjkvQSfkbtoCnjmmJ-U-GVR7sNNV)
+
+### Menu Page
+![Menu Page](https://drive.google.com/uc?export=view&id=1Vxj_Da28NPw36ZbvulPJNnhhoV7KjRIS)
+
+### Ordering Page
+![Ordering Page](https://drive.google.com/uc?export=view&id=1pKbd0qJJlam1G1C2tCCv0jN_ki2eAV7B)
+
+### Gallery Page
+![Gallery Page](https://drive.google.com/uc?export=view&id=1gKg2ElIJYMSwXfrlqVYda-qE9WphPawJ)
+
+### Feedback Page
+![Feedback Page](https://drive.google.com/uc?export=view&id=1_v9LXHxxL4Tb-Orfp-V0toGLk48gPsjH)
+
+### Blog Page
+![Blog Page](https://drive.google.com/uc?export=view&id=1zKssG0CLT-WVnUK1HxKUQJPcA0H8_0Hf)
+
+### About Page
+![About Page](https://drive.google.com/uc?export=view&id=1suIVBnt3eAz-O6N9FJgmOH1VF_1oSzqf)
+
+### Reservations Page
+![Reservations Page](https://drive.google.com/uc?export=view&id=1tlFs3nnmZ3hwCqDxGQYFLUmmxFH09d4Z)
+
+### Register Page
+![Register Page](https://drive.google.com/uc?export=view&id=1mpC3mVvOkpp5845VDc_IJzTMSzYb0Vdd)
+
+### Login Page
+![Login Page](https://drive.google.com/uc?export=view&id=1q54rxhg_Az7zulJ_7G9uwDGFlbL64GJy)
+
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
