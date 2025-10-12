@@ -12,7 +12,6 @@
       <router-link to="/ordering" class="nav-link">Order</router-link>
       <router-link to="/reservations" class="nav-link">Reservations</router-link>
       <router-link to="/gallery" class="nav-link">Gallery</router-link>
-      <router-link to="/loyalty" class="nav-link">Loyalty</router-link>
       <router-link to="/blog" class="nav-link">Blog</router-link>
       <router-link to="/feedback" class="nav-link">Feedback</router-link>
       <router-link to="/about" class="nav-link">About</router-link>

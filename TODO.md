@@ -22,7 +22,6 @@
 - [ ] Ordering/Takeaway: Cart system with checkout form
 - [ ] Reservations: Booking form with date/time picker
 - [ ] Gallery & Virtual Tour: Image carousel and embedded tour
-- [x] Loyalty/Membership: Login/signup, points system
 - [ ] Live Chat/Chatbot: Embed simple chatbot
 - [ ] Blog & Events: Post/event list with pagination
 - [ ] Feedback & Rating: Review form and display
