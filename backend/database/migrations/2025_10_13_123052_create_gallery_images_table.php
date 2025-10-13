@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('menu_items', function (Blueprint $table) {
+        Schema::create('gallery_images', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('description')->nullable();
-            $table->decimal('price', 8, 2);
-            $table->string('category'); // e.g., coffee, food, dessert
-            $table->string('image')->nullable();
-            $table->boolean('available')->default(true);
+            $table->string('title')->nullable();
+            $table->string('image_path');
+            $table->string('category')->nullable(); // e.g., interior, food, events
+            $table->integer('order')->default(0); // for sorting
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('menu_items');
+        Schema::dropIfExists('gallery_images');
     }
 };

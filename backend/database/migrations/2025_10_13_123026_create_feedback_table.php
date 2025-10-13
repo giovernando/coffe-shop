@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null');
+            $table->string('name');
+            $table->string('email');
+            $table->integer('rating'); // 1-5 stars
+            $table->text('comment')->nullable();
+            $table->boolean('approved')->default(false); // for admin approval
             $table->timestamps();
         });
     }

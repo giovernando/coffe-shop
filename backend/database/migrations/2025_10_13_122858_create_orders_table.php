@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->json('items'); // array of menu items with quantities
+            $table->decimal('total', 10, 2);
+            $table->string('status')->default('pending'); // pending, confirmed, preparing, ready, completed
+            $table->string('order_type')->default('takeaway'); // takeaway or delivery
+            $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
