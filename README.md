@@ -2,9 +2,9 @@
 
 This is a Vue 3 coffee shop website built with Vite.
 
-<!-- ## Screenshots -->
+## Screenshots
 
-<!-- ### Home Page
+### Home Page
 <img src="public/images/home.png" alt="Home Page" width="600">
 
 ### Menu Page
@@ -14,24 +14,24 @@ This is a Vue 3 coffee shop website built with Vite.
 <img src="public/images/cart.png" alt="Ordering Page" width="600">
 
 ### Gallery Page -->
-<!-- <img src="public/images/galery.png" alt="Gallery Page" width="600"> -->
+<img src="public/images/galery.png" alt="Gallery Page" width="600">
 
-<!-- ### Feedback Page -->
+### Feedback Page
 <img src="public/images/feedback.png" alt="Feedback Page" width="600">
 
-<!-- ### Blog Page -->
+### Blog Page
 <img src="public/images/blog.png" alt="Blog Page" width="600">
-<!-- 
+
 ### About Page
 <img src="public/images/about.png" alt="About Page" width="600">
 
-<!-- ### Reservations Page -->
-<!-- <img src="public/images/reservasi.png" alt="Reservations Page" width="600"> -->
+### Reservations Page
+<img src="public/images/reservasi.png" alt="Reservations Page" width="600">
 
-<!-- ### Register Page
-<img src="public/images/register.png" alt="Register Page" width="600"> -->
+### Register Page
+<img src="public/images/register.png" alt="Register Page" width="600">
 
-<!-- ### Login Page -->
+### Login Page
 <img src="public/images/login.png" alt="Login Page" width="600">
 
 This template should help get you started developing with Vue 3 in Vite. -->
