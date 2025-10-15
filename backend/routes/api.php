@@ -14,14 +14,17 @@ use App\Http\Controllers\Api\GalleryImageController;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
+// Public menu routes
+Route::apiResource('menu', MenuController::class)->only(['index', 'show']);
+
 // Protected routes
 Route::middleware('auth:sanctum')->group(function () {
     // Auth
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::get('/user', [AuthController::class, 'user']);
 
-    // Menu
-    Route::apiResource('menu', MenuController::class);
+    // Menu (full CRUD for admin)
+    Route::apiResource('menu', MenuController::class)->except(['index', 'show']);
 
     // Orders
     Route::apiResource('orders', OrderController::class);
