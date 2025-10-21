@@ -2,7 +2,7 @@
   <div class="ordering-page">
     <section class="ordering-preview">
       <h2>Ordering Preview</h2>
-      <img src="/images/screenshot-ordering.png" alt="Ordering page screenshot" class="preview-image" />
+      <p>This is the ordering page where you can view your cart, place orders, and check order history.</p>
     </section>
     <div class="order-tabs">
       <button @click="activeTab = 'cart'" :class="{ active: activeTab === 'cart' }">Current Order</button>

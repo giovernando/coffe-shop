@@ -38,7 +38,7 @@
 
   <section class="preview">
     <h2>Website Preview</h2>
-    <img src="/images/screenshot-home.png" alt="Home page screenshot" class="preview-image" />
+    <p>This is a preview of our coffee shop website, showcasing our menu, reservations, and ordering features.</p>
   </section>
 
   <section class="cta">
